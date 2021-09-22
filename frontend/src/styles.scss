@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+$black: #000;
+$lightBlack: #101010;
+$darkOrange: #D87D4A;
+$lightOrange: #fbaf85;
+$lightGray: #f1f1f1;
+$lightestGray: #fafafa;
+$white: #fff;
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+@mixin orangeButton {
+    padding: 15px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+    color: $white;
+    background-color: $darkOrange;
+
+    &:hover {
+        background-color: $lightOrange;
+    }
+}

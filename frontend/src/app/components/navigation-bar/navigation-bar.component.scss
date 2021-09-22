@@ -1,0 +1,82 @@
+@import '../../../styles.scss';
+
+header {
+    height: 10vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 10vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: white;
+    background-color: transparent;
+}
+
+.web-navigation {
+    height: 10vh;
+    border-bottom: 0.1px solid rgba($lightGray, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .fa-bars {
+        display: none;
+    }
+
+    .nav-buttons {
+        margin-left: -15vw;
+
+        nav {
+            display: inline-block;
+        }
+    }
+}
+
+nav {
+    cursor: pointer;
+    margin: 0 15px;
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav:hover {
+    color: $darkOrange;
+}
+
+.mobile-navigation {
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+    header {
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            div  {
+                .fa-bars {
+                    display: inline-block;
+                    margin-right: 30px;
+                }
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    header {
+        padding: 0;
+
+        div { 
+            padding: 0 5vw;
+        }
+    }
+}
