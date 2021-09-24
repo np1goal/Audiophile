@@ -1,0 +1,153 @@
+@import '../../../styles.scss';
+
+.speakers-page-title {
+    height: 30vh;
+    width: 100vw;
+    padding-top: 12vh;
+    margin-bottom: 15vh;
+    box-sizing: border-box;
+    z-index: 1;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background-color: $black;
+}
+
+.speakers {
+    width: 80vw;
+    height: 60vh;
+    margin: 5vh 10vw;
+    display: flex;
+    flex-direction: row;
+
+    img {
+        border-radius: 8px;
+    }
+}
+
+.speakers-text {
+    padding: 10vh 0 0 10vw;
+    box-sizing: content-box;
+
+    h6 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 10px;
+        color: $darkOrange;
+        white-space: 19px;
+        font-weight: 100;
+    }
+
+    h1 {
+        margin: 10px 0;
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 15px;
+        opacity: 0.5;
+    }
+
+    button {
+        @include orangeButton;
+    }
+}
+
+.speakers:nth-of-type(2) {
+    flex-direction: row-reverse;
+}
+
+.speakers:nth-of-type(2) .speakers-text {
+    padding: 10vh 10vw 0 0vw;
+}
+
+.tab-speakers {
+    display: none;
+}
+
+.mobile-speakers {
+    display: none;
+}
+
+@media (max-width: 850px) and (max-height: 1200px) {
+
+    .web-speakers {
+        display: none;
+    }
+
+    .tab-speakers {
+        display: block;
+    }
+
+    .mobile-speakers {
+        display: none;
+    }
+
+    .speakers-page-title {
+        margin-bottom: 5vh;
+    }
+
+    .speakers {
+        width: 80vw;
+        height: 60vh;
+        margin: 5vh 10vw;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .speakers-text {
+        padding: 5vh 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: content-box;
+    
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .speakers:nth-of-type(2) {
+        flex-direction: column;
+    }
+    
+    .speakers:nth-of-type(2) .speakers-text {
+        padding: 5vh 5vw;
+    }
+}
+
+@media (max-width: 850px) and (max-height: 800px) {
+    .speakers {
+        width: 80vw;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .web-speakers {
+        display: none;
+    }
+
+    .tab-speakers {
+        display: none;
+    }
+
+    .mobile-speakers {
+        display: block;
+    }
+
+    .speakers {
+        height: 120vh;
+
+        img {
+            width: 80vw;
+            height: 60vh;
+        }
+    }
+}
