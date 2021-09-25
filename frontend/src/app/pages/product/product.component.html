@@ -1,12 +1,80 @@
 <app-navigation-bar></app-navigation-bar>
 <main>
+    <div class="navigation-bg"></div>
     <div class="go-back">Go back</div>
     
-    <article class="product-description">Product Description</article>
-    <aside class="product-features">Product Features</aside>
+    <article class="product-description">
+        <img src={{productInfo.productImages[0]}} class="web-product">
+        <img src={{productInfo.productImages[1]}} class="tab-product">
+        <img src={{productInfo.productImages[2]}} class="mobile-product">
+        <div class="product-text">
+            <h6 *ngIf="productInfo.newProduct">NEW PRODUCT</h6>
+            <h1>{{productInfo.name}}<br>{{productInfo.type}}</h1>
+            <p>{{productInfo.description}}</p>
+            <h5>${{productInfo.price}}</h5>
+            <div class="product-input-div"><div><input type="button" value="-"><input type="number" value="0"><input type="button" value="+"></div><button>ADD TO CART</button></div>
+        </div>
+    </article>
+    <aside class="product-features">
+        <div class="features">
+            <h1>FEATURES</h1>
+            <p>{{productInfo.featuresDescription}}</p>
+        </div>
+        <div class="in-the-box">
+            <h1>IN THE BOX</h1>
+            <table>
+                <tr><td>{{productInfo.inTheBox[0][0]}}</td><td>{{productInfo.inTheBox[0][1]}}</td></tr>
+                <tr><td>{{productInfo.inTheBox[1][0]}}</td><td>{{productInfo.inTheBox[1][1]}}</td></tr>
+                <tr><td>{{productInfo.inTheBox[2][0]}}</td><td>{{productInfo.inTheBox[2][1]}}</td></tr>
+                <tr><td>{{productInfo.inTheBox[3][0]}}</td><td>{{productInfo.inTheBox[3][1]}}</td></tr>
+                <tr><td>{{productInfo.inTheBox[4][0]}}</td><td>{{productInfo.inTheBox[4][1]}}</td></tr>
+            </table>
+        </div>
+    </aside>
 
-    <div class="more-product-photos">More product photos</div>
-    <div class="you-may-also-like">You may also like</div>
+    <div class="more-product-photos">
+       <div> 
+            <img src={{productInfo.imageGallery1[0]}} class="web-product">
+            <img src={{productInfo.imageGallery1[1]}} class="tab-product">
+            <img src={{productInfo.imageGallery1[2]}} class="mobile-product">
+
+            <img src={{productInfo.imageGallery2[0]}} class="web-product">
+            <img src={{productInfo.imageGallery2[1]}} class="tab-product">
+            <img src={{productInfo.imageGallery2[2]}} class="mobile-product">
+        </div>
+
+        <div>
+            <img src={{productInfo.imageGallery3[0]}} class="web-product">
+            <img src={{productInfo.imageGallery3[1]}} class="tab-product">
+            <img src={{productInfo.imageGallery3[2]}} class="mobile-product">
+        </div>
+    </div>
+    <div class="you-may-also-like">
+        <h1>YOU MAY ALSO LIKE</h1>
+        <div class="you-may-also-like-products">
+            <div class="you-may-also-like-product">
+                <img src={{productInfo.youMayAlsoLike[0].images[0]}} class="web-product">
+                <img src={{productInfo.youMayAlsoLike[0].images[1]}} class="tab-product">
+                <img src={{productInfo.youMayAlsoLike[0].images[2]}} class="mobile-product">
+                <h5>{{productInfo.youMayAlsoLike[0].title}}</h5>
+                <div><button>SEE MORE</button></div>
+            </div>
+            <div class="you-may-also-like-product">
+                <img src={{productInfo.youMayAlsoLike[1].images[0]}} class="web-product">
+                <img src={{productInfo.youMayAlsoLike[1].images[1]}} class="tab-product">
+                <img src={{productInfo.youMayAlsoLike[1].images[2]}} class="mobile-product">
+                <h5>{{productInfo.youMayAlsoLike[1].title}}</h5>
+                <div><button>SEE MORE</button></div>
+            </div>
+            <div class="you-may-also-like-product">
+                <img src={{productInfo.youMayAlsoLike[2].images[0]}} class="web-product">
+                <img src={{productInfo.youMayAlsoLike[2].images[1]}} class="tab-product">
+                <img src={{productInfo.youMayAlsoLike[2].images[2]}} class="mobile-product">
+                <h5>{{productInfo.youMayAlsoLike[2].title}}</h5>
+                <div><button>SEE MORE</button></div>
+            </div>
+        </div>
+    </div>
     <app-products-list></app-products-list>
     <app-about></app-about>
 </main>
